@@ -3,79 +3,199 @@
 <head>
   <meta charset="UTF-8">
   <title>Andrey Camilo Romero</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #000;
-      color: #FFE81F; /* color amarillo Star Wars */
-      padding: 40px;
-      line-height: 1.6;
-    }
-
-    h1 {
-      font-size: 2.5em;
-      color: #FFE81F;
-      margin-bottom: 0;
-    }
-
-    h2 {
-      font-size: 1.5em;
-      color: #fff;
-      border-bottom: 2px solid #FFE81F;
-      display: inline-block;
-      margin-top: 30px;
-    }
-
-    p {
-      color: #ffffff;
-      max-width: 900px;
-    }
-
-    ul {
-      list-style: none;
-      padding-left: 0;
-    }
-
-    ul li {
-      margin: 8px 0;
-    }
-
-    a {
-      color: #00BFFF;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    footer {
-      margin-top: 40px;
-      color: #aaa;
-      font-size: 0.9em;
-    }
-  </style>
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-  <h1>Andrey Camilo Romero Suárez</h1>
-  <p>Estudiante de Ingeniería Mecatrónica</p>
 
-  <h2>Sobre mí</h2>
-  <p>
-    Soy Técnico Profesional en Electrónica Industrial, Tecnólogo en Automatización Industrial y actualmente curso el último semestre de Ingeniería Mecatrónica. Me especializo en automatización, electrónica y me encuentro aprendiendo Salesforce.
+  <!-- Menú de navegación fijo estilo Star Wars -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="#biografia">Sobre Mí</a></li>
+      <li><a href="#holocron">Hoja de Vida</a></li>
+      <li><a href="#misiones">Experiencia</a></li>
+      <li><a href="#arsenal">Arsenal Tecnológico</a></li>
+      <li><a href="#contacto">Canales de Comunicación</a></li>
+    </ul>
+  </nav>
+
+  <!-- Espacio para que el contenido no se oculte debajo del menú -->
+  <div style="height: 100px;"></div>
+
+  <h1>Andrey Camilo Romero</h1>
+  <p style="text-align: justify;">
+    Estudiante de Ingeniería con formación en automatización y electrónica industrial, y en proceso de especialización en
+    desarrollo Salesforce. Con experiencia en lógica de programación, automatización de procesos y bases de datos. Apasionado
+    por la tecnología, la innovación y el desarrollo de soluciones orientadas a la eficiencia operativa. Comprometido con el
+    aprendizaje continuo, la mejora constante y el trabajo colaborativo en entornos críticos. Con visión de crecimiento en
+    plataformas como desarrollo en Apex, Java y Python, y participación en proyectos de transformación digital.
   </p>
 
-  <h2>Contacto</h2>
-  <ul>
-    <li><strong>Email:</strong> andreycamilo@gmail.com</li>
-    <li><strong>Teléfono:</strong> +57 300 000 0000</li>
-    <li><strong>Ubicación:</strong> Colombia</li>
-    <li><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/tuusuario" target="_blank">/in/tuusuario</a></li>
-  </ul>
+  <!-- Biografía -->
+  <div class="section-box" id="biografia">
+    <h2>🧙‍♂️ Biografía</h2>
+    <p>
+      Soy Técnico Profesional en Electrónica Industrial, Tecnólogo en Automatización Industrial y actualmente curso el último semestre de Ingeniería Mecatrónica. Me especializo en automatización, electrónica y me encuentro aprendiendo Salesforce.
+    </p>
+  </div>
 
+  <!-- Hoja de vida -->
+  <div class="section-box" id="holocron">
+    <h2>R2-D2 Portador de Datos</h2>
+    <p>Haz clic sobre R2-D2 para ver mi hoja de vida:</p>
+    <a href="assets/cv-andrey-romero.pdf" target="_blank" class="holocron-link">
+      <img src="assets/guerra-de-las-galaxias.png" alt="R2-D2" width="100" height="100">
+    </a>
+  </div>
+
+  <!-- Experiencia -->
+  <section id="misiones" class="experiencia">
+    <h2>🛰️ Experiencia</h2>
+    <p>Aquí puedes ver algunos de mis proyectos destacados y labores de desarrollo:</p>
+    <div class="experiencia-item">
+      <h3>🔧 Administrador y Desarrollador Web</h3>
+      <p><strong>🌐 Sitio:</strong> <a href="https://academyinenglish.us/" target="_blank">academyinenglish.us</a></p>
+      <p><strong>📋 Descripción:</strong> Desarrollo de actividades académicas interactivas mediante <strong>LearnDash</strong> y <strong>H5P</strong>, optimizando la experiencia de aprendizaje a través de recursos dinámicos y evaluaciones personalizadas.</p>
+    </div>
+  </section>
+
+  <!-- Arsenal Tecnológico -->
+  <div class="experiencia" id="arsenal">
+    <h2>🛠️ Arsenal Tecnológico</h2>
+    <div class="experiencia-item">
+      <h3>🚀 Salesforce</h3>
+      <p>Manejo de la plataforma Salesforce, incluyendo automatización de procesos y gestión de datos empresariales.</p>
+    </div>
+    <div class="experiencia-item">
+      <h3>⚙️ Apex</h3>
+      <p>Lenguaje orientado a objetos utilizado para desarrollar lógica compleja en Salesforce.</p>
+    </div>
+    <div class="experiencia-item">
+      <h3>🧩 LWC (Lightning Web Components)</h3>
+      <p>Desarrollo de componentes web reutilizables con JavaScript moderno en el ecosistema Salesforce.</p>
+    </div>
+    <div class="experiencia-item">
+      <h3>🛰️ OmniScript</h3>
+      <p>Herramienta de Salesforce Industries para construir flujos de usuario visuales sin código, con integración a APIs y bases de datos.</p>
+    </div>
+  </div>
+
+  <!-- Canales de Comunicación -->
+  <div class="section-box" id="contacto">
+    <h2>📡 Canales de Comunicación</h2>
+    <ul>
+      <li><i class="fas fa-envelope"></i> <strong>Email:</strong> andreycamilo@gmail.com</li>
+      <li><i class="fas fa-phone"></i> <strong>Teléfono:</strong> +57 324 790 2352</li>
+      <li><i class="fas fa-map-marker-alt"></i> <strong>Ubicación:</strong> Colombia</li>
+      <li><i class="fab fa-linkedin"></i> <strong>LinkedIn:</strong>
+        <a href="https://www.linkedin.com/in/andreycamiloromero/" target="_blank">/in/andreycamiloromero</a>
+      </li>
+    </ul>
+  </div>
+  
+
+  <!-- Footer -->
   <footer>
-    © 2025 Andrey Camilo Romero Suárez
+    © 2025 Andrey Camilo Romero — <a href="http://www.rw-designer.com/cursor-set/lightsabercs" target="_blank">Lightsaber Cursor</a>
   </footer>
+
+  <!-- Audios escondidos -->
+  <audio id="r2d2-sound" src="assets/r2d2.mp3" preload="auto"></audio>
+  <audio id="saber-sound" src="assets/sable.mp3" preload="auto"></audio>
+
+  <!-- Botón para activar/desactivar sonidos -->
+  <button id="toggle-sound">🔊 Sonido activado</button>
+
+  <script>
+    let sonidoActivado = true;
+
+    const r2d2Sound = document.getElementById('r2d2-sound');
+    const saberSound = document.getElementById('saber-sound');
+    const toggleBtn = document.getElementById('toggle-sound');
+
+    toggleBtn.addEventListener('click', () => {
+      sonidoActivado = !sonidoActivado;
+      toggleBtn.textContent = sonidoActivado ? "🔊 Sonido activado" : "🔇 Sonido desactivado";
+    });
+
+    document.querySelector('.holocron-link img').addEventListener('mouseenter', () => {
+      if (sonidoActivado) r2d2Sound.play();
+    });
+
+    document.querySelector('.holocron-link').addEventListener('click', () => {
+      if (sonidoActivado) saberSound.play();
+    });
+  </script>
+
+  <script>
+    // Modo consola rebelde activado
+    console.log('%c🚀 BIENVENIDO, AGENTE DE LA REBELIÓN', 'color: #FFE81F; font-size: 18px; font-family: monospace; background: black; padding: 8px;');
+    console.log('%cHas accedido a la consola secreta del portafolio de Andrey Camilo Romero.', 'color: #00faff; font-family: monospace;');
+    console.log('%c----------------------------------------------------------', 'color: #FFD700;');
+    console.log('%c📂 Accesos rápidos:', 'color: #FFD700; font-weight: bold;');
+    console.log('%c📝 CV: assets/cv-andrey-romero.pdf', 'color: #fff;');
+    console.log('%c🔗 LinkedIn: https://www.linkedin.com/in/andreycamiloromero/', 'color: #fff;');
+    console.log('%c💻 Contacto: andreycamilo@gmail.com', 'color: #fff;');
+    console.log('%c----------------------------------------------------------', 'color: #FFD700;');
+    console.log('%cQue la Fuerza te acompañe. ✨', 'color: #00ff00; font-style: italic;');
+  </script>
+
+  <!-- Botón flotante C-3PO -->
+  <div class="c3po-button" onclick="toggleC3POChat()">
+  <img src="assets/c3po.png" alt="Asistente C-3PO" width="80">
+  </div>
+
+  <!-- Ventana de chat C-3PO -->
+  <div class="c3po-chat" id="c3po-chat">
+    <div class="chat-header">🤖 C-3PO Asistente</div>
+    <div class="chat-body" id="chat-body">
+      <div class="c3po-msg">¡Hola, soy C-3PO! ¿En qué puedo ayudarte?</div>
+    </div>
+    <input type="text" id="chat-input" placeholder="Escribe tu mensaje..." onkeypress="handleKeyPress(event)">
+   </div>
+   
+
+   <script>
+  function toggleC3POChat() {
+    const chat = document.getElementById('c3po-chat');
+    chat.style.display = (chat.style.display === 'flex') ? 'none' : 'flex';
+  }
+
+  function handleKeyPress(event) {
+    if (event.key === "Enter") {
+      const input = document.getElementById("chat-input");
+      const text = input.value.trim();
+      if (text === "") return;
+
+      const body = document.getElementById("chat-body");
+
+      // Mensaje del usuario
+      const userMsg = document.createElement("div");
+      userMsg.className = "user-msg";
+      userMsg.textContent = text;
+      body.appendChild(userMsg);
+
+      // Respuesta C-3PO
+      const c3poReply = document.createElement("div");
+      c3poReply.className = "c3po-msg";
+
+      // Respuestas predefinidas
+      if (text.toLowerCase().includes("cv") || text.toLowerCase().includes("hoja")) {
+        c3poReply.innerHTML = 'Puedes descargar el CV <a href="assets/cv-andrey-romero.pdf" target="_blank" style="color:#00faff;">aquí</a>.';
+      } else if (text.toLowerCase().includes("linkedin")) {
+        c3poReply.innerHTML = 'Claro, aquí tienes el <a href="https://www.linkedin.com/in/andreycamiloromero/" target="_blank" style="color:#00faff;">LinkedIn</a>.';
+      } else {
+        c3poReply.textContent = "Lo siento, soy fluido en más de seis millones de formas de comunicación, pero aún estoy aprendiendo la tuya.";
+      }
+
+      body.appendChild(c3poReply);
+      input.value = "";
+      body.scrollTop = body.scrollHeight;
+    }
+  }
+  </script>
+
+
+
 </body>
 </html>

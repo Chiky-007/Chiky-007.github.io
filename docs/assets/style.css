@@ -1,60 +1,316 @@
-/* Estilo con estética Star Wars */
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
 
+* {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, 'Orbitron', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-    margin: 0;
-    font-family: 'Orbitron', sans-serif;
-    background-color: #000;
-    color: #FFE81F;
-    line-height: 1.6;
+  background-color: #000;
+  color: #FFE81F;
+  line-height: 1.6;
+  padding: 40px;
 }
 
-header {
-    background-color: #111;
-    text-align: center;
-    padding: 2rem;
-    border-bottom: 2px solid #FFE81F;
-}
-
-header h1 {
-    font-size: 2.5rem;
-    margin: 0;
-}
-
-header p {
-    font-size: 1.2rem;
-    color: #FFD700;
-}
-
-main {
-    max-width: 800px;
-    margin: 2rem auto;
-    padding: 0 1rem;
-}
-
-section {
-    margin-bottom: 2rem;
+h1 {
+  font-size: 2.5em;
+  color: #FFE81F;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
 }
 
 h2 {
-    color: #FFF;
-    border-bottom: 1px solid #FFE81F;
-    padding-bottom: 0.5rem;
+  font-size: 1.5em;
+  color: #fff;
+  border-bottom: 2px solid #FFE81F;
+  display: inline-block;
+  margin-top: 2rem;
+  font-weight: 700;
+}
+
+p {
+  color: #ffffff;
+  max-width: 900px;
+  margin: 1rem 0;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 1rem;
+}
+
+ul li {
+  margin: 0.5rem 0;
 }
 
 a {
-    color: #FFD700;
-    text-decoration: none;
+  color: #00BFFF;
+  text-decoration: none;
 }
 
 a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 footer {
-    text-align: center;
-    padding: 1rem;
-    background-color: #111;
-    color: #FFE81F;
-    border-top: 2px solid #FFE81F;
+  margin-top: 3rem;
+  color: #aaa;
+  font-size: 0.9em;
 }
+ul li i {
+  color: #FFD700; /* amarillo Star Wars */
+  margin-right: 8px;
+}
+.holocron-link img {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.holocron-link img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px 5px #00f0ff;
+}
+@keyframes caminar-r2d2 {
+  0% {
+    transform: translateX(0) rotate(0deg) scale(1);
+  }
+  25% {
+    transform: translateX(10px) rotate(1deg) scale(1.03);
+  }
+  50% {
+    transform: translateX(0) rotate(0deg) scale(1);
+  }
+  75% {
+    transform: translateX(-10px) rotate(-1deg) scale(1.03);
+  }
+  100% {
+    transform: translateX(0) rotate(0deg) scale(1);
+  }
+}
+
+.r2d2-link img {
+  animation: caminar-r2d2 3s infinite ease-in-out;
+  filter: drop-shadow(0 0 8px #00faff);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.r2d2-link img:hover {
+  transform: scale(1.2) rotate(2deg);
+}
+#toggle-sound {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #000;
+  color: #FFE81F;
+  border: 2px solid #FFE81F;
+  padding: 10px 16px;
+  font-family: 'Orbitron', sans-serif;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+#toggle-sound:hover {
+  background-color: #111;
+
+}
+body {
+  cursor: url('http://www.rw-designer.com/cursor-extern.php?id=7281'), auto;
+}
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #000;
+  padding: 1rem 0;
+  border-bottom: 2px solid #FFE81F;
+  z-index: 1000;
+}
+
+.navbar ul {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar a {
+  color: #FFE81F;
+  font-family: 'Orbitron', sans-serif;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+.navbar a:hover {
+  color: #00faff;
+  text-shadow: 0 0 5px #00faff;
+}
+.experiencia {
+  margin-top: 40px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 10px;
+  border-left: 4px solid #FFE81F;
+  max-width: 900px;
+}
+
+.experiencia h2 {
+  color: #FFE81F;
+  font-size: 1.8em;
+  margin-bottom: 15px;
+}
+
+.experiencia-item {
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  margin-top: 10px;
+  color: #fff;
+  line-height: 1.6;
+}
+
+.experiencia-item h3 {
+  margin-top: 0;
+  color: #FFD700;
+}
+
+.experiencia-item a {
+  color: #00BFFF;
+  text-decoration: none;
+}
+
+.experiencia-item a:hover {
+  text-decoration: underline;
+}
+.section-box {
+  margin-top: 40px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 10px;
+  border-left: 4px solid #FFE81F;
+  max-width: 900px;
+  color: #fff;
+  line-height: 1.6;
+}
+
+.section-box h2 {
+  color: #FFE81F;
+  font-size: 1.8em;
+  margin-bottom: 15px;
+}
+
+.section-box a {
+  color: #00BFFF;
+  text-decoration: none;
+}
+
+.section-box a:hover {
+  text-decoration: underline;
+}
+
+.section-box ul {
+  padding-left: 20px;
+}
+
+.section-box li {
+  margin-bottom: 10px;
+}
+h2 {
+  scroll-margin-top: 80px; /* Ajusta el valor si tu navbar tiene otro alto */
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px; /* Altura del navbar fijo */
+}
+/* Botón flotante */
+.c3po-button {
+  position: fixed;
+  bottom: 15px;
+  right: 20px;
+  background: #FFE81F;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 999;
+  box-shadow: 0 0 10px #FFE81F;
+}
+
+/* Ventana de chat */
+.c3po-chat {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  width: 280px;
+  max-height: 400px;
+  background: rgba(0, 0, 0, 0.9);
+  border: 2px solid #FFE81F;
+  border-radius: 10px;
+  display: none;
+  flex-direction: column;
+  z-index: 998;
+  color: white;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.chat-header {
+  padding: 10px;
+  background: #FFD700;
+  color: black;
+  font-weight: bold;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.chat-body {
+  padding: 10px;
+  overflow-y: auto;
+  max-height: 250px;
+}
+
+.c3po-msg, .user-msg {
+  margin-bottom: 10px;
+}
+
+.c3po-msg {
+  background: #333;
+  padding: 8px;
+  border-radius: 5px;
+}
+
+.user-msg {
+  background: #0055aa;
+  padding: 8px;
+  border-radius: 5px;
+  text-align: right;
+}
+
+#chat-input {
+  border: none;
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  background: #111;
+  color: white;
+  border-top: 1px solid #FFE81F;
+  outline: none;
+}
+#toggle-sound {
+  position: fixed;
+  bottom: 20px;
+  right: 120px; /* Lo alejamos un poco hacia la izquierda */
+  z-index: 9998;
+  background: #111;
+  color: #FFE81F;
+  border: 1px solid #FFE81F;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: monospace;
+}
+
