@@ -162,39 +162,47 @@
     chat.style.display = (chat.style.display === 'flex') ? 'none' : 'flex';
   }
 
+  function sendMessage() {
+    const input = document.getElementById("chat-input");
+    const text = input.value.trim();
+    if (text === "") return;
+
+    const body = document.getElementById("chat-body");
+
+    // Mensaje del usuario
+    const userMsg = document.createElement("div");
+    userMsg.className = "user-msg";
+    userMsg.textContent = text;
+    body.appendChild(userMsg);
+
+    // Respuesta del asistente
+    const reply = document.createElement("div");
+    reply.className = "c3po-msg";
+
+    const lowerText = text.toLowerCase();
+    if (lowerText.includes("cv")) {
+      reply.innerHTML = '📁 Puedes ver el <a href="assets/cv-andrey-romero.pdf" target="_blank" style="color:#00faff;">CV aquí</a>.';
+    } else if (lowerText.includes("linkedin")) {
+      reply.innerHTML = '🔗 Aquí tienes mi <a href="https://www.linkedin.com/in/andreycamiloromero/" target="_blank" style="color:#00faff;">perfil de LinkedIn</a>.';
+    } else if (lowerText.includes("contacto")) {
+      reply.innerHTML = '📞 Puedes escribirme a <strong>andreycamilo@gmail.com</strong> o al +57 324 790 2352.';
+    } else if (lowerText.includes("hola") || lowerText.includes("buenas")) {
+      reply.textContent = "¡Saludos, humano! Soy C-3PO, tu asistente protocolario. ¿En qué puedo ayudarte?";
+    } else {
+      reply.textContent = "Lo siento, aún estoy aprendiendo. Intenta preguntarme sobre tu CV, LinkedIn o contacto.";
+    }
+
+    body.appendChild(reply);
+    input.value = "";
+    body.scrollTop = body.scrollHeight;
+  }
+
   function handleKeyPress(event) {
     if (event.key === "Enter") {
-      const input = document.getElementById("chat-input");
-      const text = input.value.trim();
-      if (text === "") return;
-
-      const body = document.getElementById("chat-body");
-
-      // Mensaje del usuario
-      const userMsg = document.createElement("div");
-      userMsg.className = "user-msg";
-      userMsg.textContent = text;
-      body.appendChild(userMsg);
-
-      // Respuesta C-3PO
-      const c3poReply = document.createElement("div");
-      c3poReply.className = "c3po-msg";
-
-      // Respuestas predefinidas
-      if (text.toLowerCase().includes("cv") || text.toLowerCase().includes("hoja")) {
-        c3poReply.innerHTML = 'Puedes descargar el CV <a href="assets/cv-andrey-romero.pdf" target="_blank" style="color:#00faff;">aquí</a>.';
-      } else if (text.toLowerCase().includes("linkedin")) {
-        c3poReply.innerHTML = 'Claro, aquí tienes el <a href="https://www.linkedin.com/in/andreycamiloromero/" target="_blank" style="color:#00faff;">LinkedIn</a>.';
-      } else {
-        c3poReply.textContent = "Lo siento, soy fluido en más de seis millones de formas de comunicación, pero aún estoy aprendiendo la tuya.";
-      }
-
-      body.appendChild(c3poReply);
-      input.value = "";
-      body.scrollTop = body.scrollHeight;
+      sendMessage();
     }
   }
-  </script>
+</script>
 
 
  

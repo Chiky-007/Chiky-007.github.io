@@ -326,3 +326,85 @@ body {
   color: #fff;
   font-family: 'Orbitron', sans-serif;
 }
+.c3po-chat {
+  position: fixed;
+  bottom: 100px;
+  right: 30px;
+  width: 300px;
+  height: 400px;
+  background-color: #111;
+  border: 2px solid #FFE81F;
+  border-radius: 10px;
+  display: none;
+  flex-direction: column;
+  box-shadow: 0 0 10px #FFE81F;
+  z-index: 9999;
+}
+
+.chat-header {
+  background-color: #222;
+  color: #FFE81F;
+  padding: 10px;
+  font-weight: bold;
+  border-bottom: 1px solid #FFE81F;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.close-chat {
+  background: none;
+  border: none;
+  color: #FFE81F;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.chat-body {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+  color: white;
+  font-size: 0.9rem;
+}
+
+.chat-input-container {
+  display: flex;
+  border-top: 1px solid #FFE81F;
+}
+
+.chat-input-container input {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  outline: none;
+  background: #222;
+  color: white;
+}
+
+.chat-input-container button {
+  background: #FFE81F;
+  border: none;
+  color: #000;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.user-msg, .c3po-msg {
+  margin: 5px 0;
+  padding: 6px 10px;
+  border-radius: 10px;
+  max-width: 90%;
+}
+
+.user-msg {
+  background-color: #00faff;
+  color: black;
+  align-self: flex-end;
+}
+
+.c3po-msg {
+  background-color: #333;
+  color: #FFE81F;
+  align-self: flex-start;
+}
