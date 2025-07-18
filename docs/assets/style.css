@@ -318,4 +318,11 @@ html {
   margin: 0 auto;
   padding: 0 20px;
 }
-
+body {
+  background: url('fondo-estrellas.png') no-repeat center center fixed;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  font-family: 'Orbitron', sans-serif;
+}
