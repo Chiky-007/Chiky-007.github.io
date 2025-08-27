@@ -1,0 +1,67 @@
+/* Estilos para la nave TIE Fighter */
+#tie-fighter-container {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  width: 0;
+  height: 0;
+  transform-origin: center center;
+  will-change: transform, left, top; /* Optimización para reducir el delay */
+  transition: none; /* Eliminar cualquier transición que cause delay */
+}
+
+#tie-fighter {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  transform: translate(-50%, -50%); /* Centra la nave en el cursor */
+  pointer-events: none;
+  z-index: 9999;
+  transition: none; /* Eliminar transición para movimiento inmediato */
+  will-change: transform; /* Optimización para renderizado */
+}
+
+/* Estilo para la imagen del TIE Fighter */
+.tie-fighter-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transform: scale(1.3); /* Hacemos la imagen un poco más grande */
+  transform-origin: center;
+  pointer-events: none;
+  transition: filter 0.3s;
+}
+
+/* Eliminamos este estilo ya que ahora está incluido en la animación */
+
+/* Estilo para el láser */
+.laser {
+  position: fixed !important; /* Cambiado a fixed para que funcione en toda la página */
+  width: 5px;
+  height: 25px;
+  background-color: #ff0000;
+  box-shadow: 0 0 20px #ff0000, 0 0 8px #fff, inset 0 0 10px #ffffff;
+  border-radius: 2px;
+  z-index: 9998;
+  pointer-events: none;
+  transform-origin: center;
+  will-change: transform, opacity, left, top; /* Optimización para la animación */
+  opacity: 0.95;
+}
+
+/* Efecto de disparo para la nave - solo afecta a la imagen, no a la posición */
+.shooting .tie-fighter-img {
+  animation: shoot-effect-img 0.2s ease;
+}
+
+@keyframes shoot-effect-img {
+  0% {
+    filter: drop-shadow(0 0 20px rgba(255, 0, 0, 0.8)) brightness(1.3);
+  }
+  50% {
+    filter: drop-shadow(0 0 30px rgba(255, 0, 0, 0.9)) brightness(1.7);
+  }
+  100% {
+    filter: drop-shadow(0 0 20px rgba(255, 0, 0, 0.8)) brightness(1.3);
+  }
+}

@@ -118,7 +118,7 @@ ul li i {
 
 }
 body {
-  cursor: url('http://www.rw-designer.com/cursor-extern.php?id=7281'), auto;
+  cursor: url('https://www.rw-designer.com/cursor-extern.php?id=7281'), auto;
 }
 .navbar {
   position: fixed;
@@ -325,6 +325,86 @@ body {
   padding: 0;
   color: #fff;
   font-family: 'Orbitron', sans-serif;
+}
+
+/* Estilos para la nave espacial (TIE Fighter) */
+.tie-fighter {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  z-index: 9999;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: transform 0.05s ease;
+  filter: drop-shadow(0 0 15px rgba(0, 200, 255, 0.9));
+  /* Importante: visible y al frente */
+  visibility: visible !important;
+  display: block !important;
+}
+
+.tie-cockpit {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  background-color: #333;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 3px solid #888;
+  box-shadow: 0 0 15px #00faff, 0 0 5px #fff;
+}
+
+.tie-wing {
+  position: absolute;
+  width: 45px;
+  height: 45px;
+  background-color: #111;
+  border: 3px solid #666;
+  transform-origin: center;
+}
+
+.left-wing {
+  left: -30px;
+  transform: skew(30deg);
+  border-radius: 5px 0 0 5px;
+}
+
+.right-wing {
+  right: -30px;
+  transform: skew(-30deg);
+  border-radius: 0 5px 5px 0;
+}
+
+/* Estilos para el disparo láser */
+.laser {
+  position: absolute !important;
+  width: 5px !important;
+  height: 30px !important;
+  background-color: #ff0000 !important;
+  box-shadow: 0 0 15px #ff0000, 0 0 5px #ffffff !important;
+  border-radius: 50% !important;
+  animation: laser-animation 0.5s linear forwards !important;
+  z-index: 9998 !important;
+  pointer-events: none !important;
+  display: block !important;
+  visibility: visible !important;
+}
+
+@keyframes laser-animation {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100px) scale(0.5);
+    opacity: 0;
+  }
+}
+
+/* Destacar TIE Fighter para que sea más visible */
+.tie-fighter {
+  filter: drop-shadow(0 0 10px #00ffff) drop-shadow(0 0 15px #0088ff);
 }
 .c3po-chat {
   position: fixed;
