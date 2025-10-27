@@ -34,6 +34,8 @@ p {
   color: #ffffff;
   max-width: 900px;
   margin: 1rem 0;
+  text-align: justify !important;
+  text-justify: inter-word;
 }
 
 ul {
@@ -487,4 +489,7 @@ body {
   background-color: #333;
   color: #FFE81F;
   align-self: flex-start;
+}
+.contenedor > p {
+    text-align: justify !important;
 }
