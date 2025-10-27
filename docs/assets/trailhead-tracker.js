@@ -1,8 +1,18 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // ID de tu perfil de Trailhead
-    const TRAILBLAZER_ID = 'gdigdw25bv4y3uw2z2'; 
+    // 🎯 DATOS ESTÁTICOS - Actualiza estos valores manualmente desde tu perfil
+    const TRAILHEAD_DATA = {
+        points: 12500,           // Tus puntos totales
+        badges: 45,              // Tus insignias totales
+        rank: 'Ranger',          // Tu rango actual
+        certifications: [
+            // Agrega tus certificaciones aquí
+            // { title: 'Nombre de la Certificación', dateCompleted: '2024-01-15' }
+        ]
+    };
     
-    // Elementos del DOM donde inyectaremos los datos
+    const TRAILBLAZER_ID = 'gdigdw25bv4y3uw2z2';
+    
+    // Elementos del DOM
     const totalPointsEl = document.getElementById('total-points');
     const totalBadgesEl = document.getElementById('total-badges');
     const currentRankEl = document.getElementById('current-rank');
@@ -10,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const certTitleEl = certListEl ? certListEl.previousElementSibling : null;
 
     /**
-     * Actualiza la interfaz del Tracker con los datos obtenidos.
+     * Actualiza la interfaz del Tracker
      */
     function updateTrackerUI(points, badges, rank, certifications) {
         if (totalPointsEl) totalPointsEl.textContent = points.toLocaleString();
@@ -18,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (currentRankEl) currentRankEl.textContent = rank;
 
         if (certListEl) {
-            certListEl.innerHTML = ''; // Limpiar lista
+            certListEl.innerHTML = '';
             if (certTitleEl) certTitleEl.textContent = `Certificaciones Activas (${certifications.length})`;
 
             if (certifications.length > 0) {
@@ -37,72 +47,18 @@ document.addEventListener('DOMContentLoaded', function() {
                     certListEl.appendChild(li);
                 });
             } else {
-                certListEl.innerHTML = '<li>¡Ninguna certificación activa registrada!</li>';
+                certListEl.innerHTML = '<li>🎯 Actualmente trabajando en nuevas certificaciones</li>';
             }
         }
     }
 
-    /**
-     * Realiza la solicitud usando la API pública de Trailhead
-     */
-    async function fetchTrailheadData() {
-        try {
-            // Usamos la API pública de trailblazer.me que no requiere autenticación
-            const profileUrl = `https://trailblazer.me/id/${TRAILBLAZER_ID}`;
-            
-            // Intentamos obtener los datos del perfil público
-            // Nota: Esta es una solución temporal. Para producción, necesitarías un backend.
-            const corsProxy = 'https://api.allorigins.win/raw?url=';
-            const apiUrl = `https://profile.api.trailhead.com/v1/users/${TRAILBLAZER_ID}`;
-            
-            const response = await fetch(corsProxy + encodeURIComponent(apiUrl));
-            
-            if (!response.ok) {
-                throw new Error(`Error HTTP: ${response.status}`);
-            }
-
-            const data = await response.json();
-            
-            console.log('✅ Datos recibidos:', data);
-
-            if (data) {
-                // Extraer certificaciones activas
-                const activeCerts = data.certifications ? 
-                    data.certifications.filter(cert => cert.status === 'Active' || cert.status === 'ACTIVE') : 
-                    [];
-                
-                updateTrackerUI(
-                    data.earnedPointsSum || 0,
-                    data.earnedBadgesCount || 0,
-                    data.rank?.title || data.rank?.titleFormatted || 'Ranger',
-                    activeCerts
-                );
-            } else {
-                throw new Error('No se encontraron datos del usuario');
-            }
-
-        } catch (error) {
-            console.error("❌ Error al cargar los datos de Trailhead:", error);
-            
-            // Mostrar datos de ejemplo para que veas el diseño funcionando
-            if (totalPointsEl) totalPointsEl.textContent = 'No disponible';
-            if (totalBadgesEl) totalBadgesEl.textContent = 'No disponible';
-            if (currentRankEl) currentRankEl.textContent = 'No disponible';
-            if (certListEl) {
-                certListEl.innerHTML = `
-                    <li style="color: #ff6b6b;">
-                        ⚠️ No se pudieron cargar los datos. 
-                        <a href="https://www.salesforce.com/trailblazer/${TRAILBLAZER_ID}" 
-                           target="_blank" 
-                           style="color: #00BFFF;">
-                           Ver perfil completo
-                        </a>
-                    </li>
-                `;
-            }
-        }
-    }
-
-    // Ejecutar la función al cargar la página
-    fetchTrailheadData();
+    // Cargar datos estáticos inmediatamente
+    console.log('📊 Cargando datos de Trailhead...');
+    updateTrackerUI(
+        TRAILHEAD_DATA.points,
+        TRAILHEAD_DATA.badges,
+        TRAILHEAD_DATA.rank,
+        TRAILHEAD_DATA.certifications
+    );
+    console.log('✅ Datos de Trailhead cargados exitosamente');
 });
