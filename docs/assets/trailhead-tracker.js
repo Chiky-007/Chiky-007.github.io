@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
     // 🎯 DATOS ESTÁTICOS - Actualiza estos valores manualmente desde tu perfil
     const TRAILHEAD_DATA = {
-        points: 12500,           // Tus puntos totales
-        badges: 45,              // Tus insignias totales
+        points: 13000,           // Tus puntos totales
+        badges: 12,              // Tus insignias totales
         rank: 'Ranger',          // Tu rango actual
         certifications: [
             // Agrega tus certificaciones aquí
