@@ -140,7 +140,7 @@
   </div>
   
   <!-- Botón para activar/desactivar sonidos -->
-  <button id="toggle-sound">� Activar sonido</button>
+  <button id="toggle-sound">&#128266; Activar sonido</button>
 
   <script>
     let sonidoActivado = false;
@@ -151,7 +151,7 @@
 
     toggleBtn.addEventListener('click', () => {
       sonidoActivado = !sonidoActivado;
-      toggleBtn.textContent = sonidoActivado ? "� Desactivar sonido" : "� Activar sonido";
+      toggleBtn.innerHTML = sonidoActivado ? "&#128263; Desactivar sonido" : "&#128266; Activar sonido";
       
       // Intentar reproducir un sonido silencioso para habilitar audio
       if (sonidoActivado) {
