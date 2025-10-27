@@ -534,9 +534,10 @@ body {
     font-size: 1.8em;
     font-weight: bold;
     color: #00faff; /* Azul claro / Cian para datos */
-    margin: 0;
-    text-align: center;
+    margin: 0 auto !important;
+    text-align: center !important;
     width: 100%;
+    display: block;
 }
 
 .cert-list {
